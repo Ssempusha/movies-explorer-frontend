@@ -33,6 +33,11 @@
   font-weight: 500;
   line-height: 1.33;
   text-decoration: none;
+  transition: opacity 0.2s ease, color;
+}
+
+.header__link-signup:hover {
+  opacity: 0.8;
 }
 
 .header__button-signin {
@@ -49,6 +54,11 @@
   background-color: #3456f3;
   border-radius: 3px;
   flex-shrink: 0;
+  transition: opacity 0.2s ease, color;
+}
+
+.header__button-signin:hover {
+  opacity: 0.8;
 }
 
 .header__navigation-container {

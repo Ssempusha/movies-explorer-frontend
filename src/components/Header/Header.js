@@ -10,7 +10,7 @@ function Header() {
   const location = useLocation();
 
   // временное переключение залогиненности вручную
-  const [islogin, setIsLogin] = useState(true);
+  const [islogin, setIsLogin] = useState(false);
 
   const headerRoute = () => {
     return location.pathname === "/";
