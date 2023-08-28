@@ -11,20 +11,22 @@ function Movies() {
   return (
     <>
       <Header />
-      <SearchForm />
-      <section className="saved-movies">
-        {isPreloader ? (
-          <Preloader />
-        ) : (
-          <>
-            <ul className="saved-movies__list">
-              <MoviesCard />
-              <MoviesCard />
-              <MoviesCard />
-            </ul>
-          </>
-        )}
-      </section>
+      <main>
+        <SearchForm />
+        <section className="saved-movies">
+          {isPreloader ? (
+            <Preloader />
+          ) : (
+            <>
+              <ul className="saved-movies__list">
+                <MoviesCard />
+                <MoviesCard />
+                <MoviesCard />
+              </ul>
+            </>
+          )}
+        </section>
+      </main>
       <Footer />
     </>
   );

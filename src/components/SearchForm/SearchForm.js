@@ -13,7 +13,7 @@ function SearchForm() {
               <img className="search-form__lens" alt="Лупа" src={lensImg}></img>
               <input
                 id="search-film"
-                required=""
+                required
                 className="search-from-input"
                 type="text"
                 placeholder="Фильм"

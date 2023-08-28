@@ -21,8 +21,10 @@
   margin: 0;
 }
 
-.not-found__back-link {
-  display: block;
+.not-found__back-button {
+  display: inline-block;
+  background-color: initial;
+  border: none;
   color: #3456f3;
   margin: 184px 0 0 0;
   font-size: 14px;
@@ -49,7 +51,7 @@
     font-size: 12px;
   }
 
-  .not-found__back-link {
+  .not-found__back-button {
     margin-top: 285px;
     font-size: 12px;
   }

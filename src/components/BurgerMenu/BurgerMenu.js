@@ -8,9 +8,9 @@ function BurgerMenu({ handleClose }) {
     <div className="burger-menu">
       <div className="burger-menu__container">
         <button
+          type="button"
           className="burger-menu__close-button"
           onClick={handleClose}
-          type="button"
         ></button>
         <nav className="burger-menu__nav">
           <NavLink

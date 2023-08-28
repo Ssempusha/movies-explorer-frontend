@@ -1,18 +1,25 @@
 import React from "react";
 import "./NotFound.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function NotFound() {
+  const navigate = useNavigate();
   return (
-    <div className="not-found">
-      <div className="not-found__container">
-        <h2 className="not-found__title">404</h2>
-        <p className="not-found__text">Страница не найдена</p>
-        <Link to="/" className="not-found__back-link">
-          Назад
-        </Link>
-      </div>
-    </div>
+    <main>
+      <section className="not-found">
+        <div className="not-found__container">
+          <h1 className="not-found__title">404</h1>
+          <p className="not-found__text">Страница не найдена</p>
+          <button
+            type="button"
+            className="not-found__back-button"
+            onClick={() => navigate(-1)}
+          >
+            Назад
+          </button>
+        </div>
+      </section>
+    </main>
   );
 }
 

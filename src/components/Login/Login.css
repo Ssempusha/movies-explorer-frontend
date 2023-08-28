@@ -45,6 +45,10 @@
   margin-bottom: 0;
 }
 
+.login__input:focus {
+  border-bottom-color: #3456f3;
+}
+
 .login__button {
   background-color: #3456f3;
   border: none;

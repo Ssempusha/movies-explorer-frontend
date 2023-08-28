@@ -19,6 +19,7 @@
   width: 100%;
   align-items: center;
   justify-items: stretch;
+  justify-content: center;
 }
 
 .movies-list__button-more {

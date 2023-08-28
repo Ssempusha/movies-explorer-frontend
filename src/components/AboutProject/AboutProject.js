@@ -31,17 +31,13 @@ function AboutProject() {
             <p className="about-project__time-text about-project__time-text-backend">
               1 неделя
             </p>
-            <figcaption className="about-project__description">
-              Back-end
-            </figcaption>
+            <p className="about-project__description">Back-end</p>
           </div>
           <div className="about-project__time-block about-project__time-block-frontend">
             <p className="about-project__time-text about-project__time-text-frontend">
               4 недели
             </p>
-            <figcaption className="about-project__description">
-              Front-end
-            </figcaption>
+            <p className="about-project__description">Front-end</p>
           </div>
         </div>
       </div>

@@ -23,7 +23,7 @@ function MoviesCard() {
 
   return (
     <li className="movies-card">
-      <img className="movies-card__image" src={filmImg} alt="Обложка фильма" />
+      <img className="movies-card__image" src={filmImg} alt="33 слова о дизайне" />
       <div className="movies-card__film-container">
         <div className="movies-card__film-info-container">
           <h2 className="movies-card__film-name">33 слова о дизайне</h2>

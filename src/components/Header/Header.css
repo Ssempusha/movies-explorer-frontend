@@ -15,6 +15,11 @@
 .header__logo {
   max-width: 38px;
   height: 38px;
+  transition: opacity 0.2s ease, color;
+}
+
+.header__logo:hover {
+  opacity: 0.7;
 }
 
 .header__auth-links {
@@ -70,6 +75,11 @@
   font-weight: 500;
   line-height: 1.14;
   text-decoration: none;
+  transition: opacity 0.2s ease, color;
+}
+
+.header__account-button:hover {
+  opacity: 0.7;
 }
 
 .header__icon-button-account {
@@ -114,6 +124,11 @@
     background-size: cover;
     border: none;
     cursor: pointer;
+    transition: opacity 0.2s ease, color;
+  }
+
+  .header__burger-menu:hover {
+    opacity: 0.7;
   }
 
   .header__navigation-container {

@@ -27,7 +27,7 @@ function Header() {
   };
 
   const headerState = islogin ? (
-    <div className="header__navigation-container">
+    <nav className="header__navigation-container">
       <Navigation />
       <Link className="header__account-button" to="/profile">
         <img
@@ -38,23 +38,23 @@ function Header() {
         <p className="header__account-button-text">Аккаунт</p>
       </Link>
       <button
+        type="button"
         className={`header__burger-menu ${
           isMenuOpen ? "header__burger-menu_unactive" : ""
         }`}
         onClick={toggleMenu}
-        type="button"
       />
       {isMenuOpen ? <BurgerMenu handleClose={toggleMenu} /> : ""}
-    </div>
+    </nav>
   ) : (
-    <div className="header__auth-links">
+    <nav className="header__auth-links">
       <Link className="header__link-signup" to="/signup">
         Регистрация
       </Link>
       <Link className="header__button-signin" to="/signin">
         Войти
       </Link>
-    </div>
+    </nav>
   );
 
   return (

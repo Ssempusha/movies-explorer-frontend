@@ -12,6 +12,7 @@ function Portfolio() {
             <a
               className="portfolio__link"
               href="https://ssempusha.github.io/how-to-learn/"
+              target="blank"
             >
               Статичный сайт
             </a>
@@ -31,6 +32,7 @@ function Portfolio() {
             <a
               className="portfolio__link"
               href="https://ssempusha.github.io/russian-travel/"
+              target="blank"
             >
               Адаптивный сайт
             </a>
@@ -50,6 +52,7 @@ function Portfolio() {
             <a
               className="portfolio__link"
               href="https://ssempusha.github.io/react-mesto-auth/"
+              target="blank"
             >
               Одностраничное приложение
             </a>
