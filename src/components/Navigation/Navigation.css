@@ -1,0 +1,37 @@
+.header__nav-link {
+  margin-right: 16px;
+  color: #000;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.38;
+  text-decoration: none;
+  transition: opacity 0.2s ease, color;
+}
+
+.header__nav-link:hover {
+  opacity: 0.7;
+}
+
+.header__nav-link:last-of-type {
+  margin-right: 0;
+}
+
+.header__nav-link-active {
+  margin-right: 16px;
+  color: #000;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.38;
+  text-decoration: none;
+  transition: opacity 0.2s ease, color;
+}
+
+.header__nav-link-active:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .header__nav {
+    display: none;
+  }
+}
