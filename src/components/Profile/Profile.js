@@ -13,7 +13,9 @@ function Profile() {
             <h1 className="profile__title">Привет, Юлия!</h1>
             <form className="profile__form">
               <div className="profile__input-container">
-                <p className="profile__inscription">Имя</p>
+                <label className="profile__inscription" for="profile-name">
+                  Имя
+                </label>
                 <input
                   id="profile-name"
                   required
@@ -27,7 +29,9 @@ function Profile() {
                 />
               </div>
               <div className="profile__input-container">
-                <p className="profile__inscription">E-mail</p>
+                <label className="profile__inscription" for="profile-email">
+                  E-mail
+                </label>
                 <input
                   id="profile-email"
                   required

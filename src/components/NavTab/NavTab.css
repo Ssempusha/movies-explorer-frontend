@@ -39,10 +39,9 @@
   opacity: 0.7;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 420px) {
   .nav-tab__nav {
     padding: 21px 53px;
-    max-width: 1140px;
   }
 
   .nav-tab__nav-item {

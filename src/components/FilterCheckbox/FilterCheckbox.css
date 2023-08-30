@@ -21,6 +21,7 @@
   font-weight: 400;
   line-height: 1.38;
   transition: opacity 0.2s ease, color;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .filter-checkbox__text:hover {

@@ -13,7 +13,9 @@ function Login() {
           </Link>
           <h1 className="login__title">Рады видеть!</h1>
           <form className="login__form">
-            <p className="login__inscription">E-mail</p>
+            <label className="login__inscription" for="login-email">
+              E-mail
+            </label>
             <input
               id="login-email"
               required
@@ -23,9 +25,11 @@ function Login() {
               defaultValue=""
               name="email"
             />
-            <p className="login__inscription">Пароль</p>
+            <label className="login__inscription" for="login-password">
+              Пароль
+            </label>
             <input
-              id="loginr-password"
+              id="login-password"
               required
               className="login__input"
               type="password"

@@ -13,7 +13,9 @@ function Register() {
           </Link>
           <h1 className="register__title">Добро пожаловать!</h1>
           <form className="register__form">
-            <p className="register__inscription">Имя</p>
+            <label className="register__inscription" for="register-name">
+              Имя
+            </label>
             <input
               id="register-name"
               required
@@ -25,7 +27,9 @@ function Register() {
               minLength="2"
               maxLength="30"
             />
-            <p className="register__inscription">E-mail</p>
+            <label className="register__inscription" for="register-email">
+              E-mail
+            </label>
             <input
               id="register-email"
               required
@@ -35,7 +39,9 @@ function Register() {
               defaultValue=""
               name="email"
             />
-            <p className="register__inscription">Пароль</p>
+            <label className="register__inscription" for="register-password">
+              Пароль
+            </label>
             <input
               id="register-password"
               required
@@ -48,7 +54,9 @@ function Register() {
               minLength="8"
               maxLength="30"
             />
-            <label className="register__error">Что-то пошло не так...</label>
+            <label className="register__error" for="register-password">
+              Что-то пошло не так...
+            </label>
             <button type="submit" className="register__button">
               Зарегистрироваться
             </button>

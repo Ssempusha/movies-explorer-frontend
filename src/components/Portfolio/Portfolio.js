@@ -10,13 +10,18 @@ function Portfolio() {
         <ul className="portfolio__list">
           <li className="portfolio__item">
             <a
-              className="portfolio__link"
+              className="portfolio__item-link"
               href="https://ssempusha.github.io/how-to-learn/"
               target="blank"
             >
-              Статичный сайт
+              <p className="portfolio__link-text">Статичный сайт</p>
+              <img
+                className="portfolio__link-arrow-img"
+                src={arrow}
+                alt="стрелочка"
+              />
             </a>
-            <a
+{/*             <a
               className="portfolio__arrow-link"
               href="https://ssempusha.github.io/how-to-learn/"
               target="blank"
@@ -26,10 +31,22 @@ function Portfolio() {
                 src={arrow}
                 alt="стрелочка"
               />
-            </a>
+            </a> */}
           </li>
           <li className="portfolio__item">
-            <a
+          <a
+              className="portfolio__item-link"
+              href="https://ssempusha.github.io/russian-travel/"
+              target="blank"
+            >
+              <p className="portfolio__link-text">Адаптивный сайт</p>
+              <img
+                className="portfolio__link-arrow-img"
+                src={arrow}
+                alt="стрелочка"
+              />
+            </a>
+            {/* <a
               className="portfolio__link"
               href="https://ssempusha.github.io/russian-travel/"
               target="blank"
@@ -46,10 +63,22 @@ function Portfolio() {
                 src={arrow}
                 alt="стрелочка"
               />
-            </a>
+            </a> */}
           </li>
           <li className="portfolio__item">
-            <a
+          <a
+              className="portfolio__item-link"
+              href="https://ssempusha.github.io/react-mesto-auth/"
+              target="blank"
+            >
+              <p className="portfolio__link-text">Одностраничное приложение</p>
+              <img
+                className="portfolio__link-arrow-img"
+                src={arrow}
+                alt="стрелочка"
+              />
+            </a>
+{/*             <a
               className="portfolio__link"
               href="https://ssempusha.github.io/react-mesto-auth/"
               target="blank"
@@ -66,7 +95,7 @@ function Portfolio() {
                 src={arrow}
                 alt="стрелочка"
               />
-            </a>
+            </a> */}
           </li>
         </ul>
       </div>
