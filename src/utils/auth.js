@@ -1,4 +1,4 @@
-export const BASE_URL = "api.moviessempusha.nomoreparties.co";
+export const BASE_URL = "https://api.moviessempusha.nomoreparties.co";
 
 function checkResponse(res) {
   if (res.ok) {

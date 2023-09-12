@@ -85,7 +85,7 @@ class Api {
 }
 
 export const mainApi = new Api({
-  url: "api.moviessempusha.nomoreparties.co",
+  url: "https://api.moviessempusha.nomoreparties.co",
   headers: {
     authorization: `Bearer ${localStorage.getItem("userId")}`,
     "Content-Type": "application/json",
