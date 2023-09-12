@@ -6,11 +6,8 @@ import Navigation from "../Navigation/Navigation";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import "./Header.css";
 
-function Header() {
+function Header({ loggedIn }) {
   const location = useLocation();
-
-  // временное переключение залогиненности вручную
-  const [islogin, setIsLogin] = useState(false);
 
   const headerRoute = () => {
     return location.pathname === "/";
@@ -26,7 +23,7 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const headerState = islogin ? (
+  const headerState = loggedIn ? (
     <nav className="header__navigation-container">
       <Navigation />
       <Link className="header__account-button" to="/profile">

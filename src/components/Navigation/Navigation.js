@@ -6,7 +6,7 @@ function Navigation() {
   return (
     <nav className="header__nav">
       <NavLink
-        exact
+        exact="true"
         to="/movies"
         className={({ isActive }) =>
           isActive ? "header__nav-link-active" : "header__nav-link"

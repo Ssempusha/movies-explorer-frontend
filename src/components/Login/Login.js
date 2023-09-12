@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
 import loginLogo from "../../images/logo.svg";
+import useForm from "../../hooks/useFormValidation";
 
-function Login() {
+function Login({ onLogin, renderLoading, success, submitStatus }) {
+  const { handleChange, errors, data, isValid } = useForm();
+  const [isSubmit, setSubmit] = useState(false);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    onLogin(data.email, data.password);
+  }
+
   return (
     <main>
       <section className="login">
@@ -12,8 +21,8 @@ function Login() {
             <img className="login__logo" src={loginLogo} alt="Логотип" />
           </Link>
           <h1 className="login__title">Рады видеть!</h1>
-          <form className="login__form">
-            <label className="login__inscription" for="login-email">
+          <form className="login__form" noValidate onSubmit={handleSubmit}>
+            <label className="login__inscription" htmlFor="login-email">
               E-mail
             </label>
             <input
@@ -24,8 +33,10 @@ function Login() {
               placeholder="E-mail"
               defaultValue=""
               name="email"
+              onChange={handleChange}
             />
-            <label className="login__inscription" for="login-password">
+            <span className="login__error">{errors.email}</span>
+            <label className="login__inscription" htmlFor="login-password">
               Пароль
             </label>
             <input
@@ -34,15 +45,32 @@ function Login() {
               className="login__input"
               type="password"
               placeholder="Пароль"
-              defaultValue=""
               name="password"
               minLength="8"
               maxLength="30"
+              defaultValue=""
+              onChange={handleChange}
             />
-
-            <button type="submit" className="login__button">
-              Войти
-            </button>
+            <span className="login__error">{errors.password}</span>
+            <div className="login__button-container">
+              {isSubmit && (
+                <span
+                  className={`${
+                    success ? "login__submit-success" : "login__submit-error"
+                  }`}
+                >
+                  {submitStatus}
+                </span>
+              )}
+              <button
+                type="submit"
+                className="login__button"
+                disabled={!(isValid.email && isValid.password)}
+                onClick={() => setSubmit(true)}
+              >
+                {renderLoading}
+              </button>
+            </div>
           </form>
           <p className="login__question">
             Ещё не зарегистрированы?{" "}
