@@ -24,11 +24,10 @@ function Movies({
 
   const handleFilterMovies = (movies, request, isShort) => {
     const filteredFilms = filterNameMovies(movies, request);
-
+    localStorage.setItem("filteredMovies", JSON.stringify(filteredFilms));
     if (!filteredFilms.length) {
       setSearchText("Ничего не найдено");
     } else {
-      localStorage.setItem("filteredMovies", JSON.stringify(filteredFilms));
       setFilterMovies(
         isShort ? filterDurationMovies(filteredFilms) : filteredFilms
       );
