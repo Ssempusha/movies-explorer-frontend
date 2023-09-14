@@ -29,6 +29,16 @@ function App() {
   }
 
   useEffect(() => {
+    mainApi.getUserInfo()
+      .then((userInfo) => {
+        setCurrentUser(userInfo);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  useEffect(() => {
     if (loggedIn) {
       mainApi
         .getUserInfo()
@@ -137,7 +147,7 @@ function App() {
       })
       .catch((err) => {
         setSuccess(false);
-        if (err === "Произошла ошибка: 400") {
+        if (err === "Произошла ошибка: 409") {
           setSubmitStatus("Пользователь с таким e-mail уже существует.");
         } else {
           setSubmitStatus("При обновлении профиля произошла ошибка.");
@@ -201,30 +211,35 @@ function App() {
         <div className="page">
           <Routes>
             <Route path="/" element={<Main loggedIn={loggedIn} />} />
-            <Route
-              path="/signin"
-              element={
-                <Login
-                  onLogin={handleLogin}
-                  renderLoading={renderLoading ? "Вход..." : "Войти"}
-                  success={success}
-                  submitStatus={submitStatus}
-                />
-              }
-            />
-            <Route
-              path="/signup"
-              element={
-                <Register
-                  onRegister={handleRegister}
-                  renderLoading={
-                    renderLoading ? "Регистрация..." : "Зарегистрироваться"
+            {!loggedIn ? (
+              <>
+                <Route
+                  path="/signin"
+                  element={
+                    <Login
+                      onLogin={handleLogin}
+                      renderLoading={renderLoading ? "Вход..." : "Войти"}
+                      success={success}
+                      submitStatus={submitStatus}
+                    />
                   }
-                  success={success}
-                  submitStatus={submitStatus}
                 />
-              }
-            />
+                <Route
+                  path="/signup"
+                  element={
+                    <Register
+                      onRegister={handleRegister}
+                      renderLoading={
+                        renderLoading ? "Регистрация..." : "Зарегистрироваться"
+                      }
+                      success={success}
+                      submitStatus={submitStatus}
+                    />
+                  }
+                />
+              </>
+            ) : null}
+
             <Route
               path="/movies"
               element={

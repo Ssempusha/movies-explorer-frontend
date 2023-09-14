@@ -10,19 +10,23 @@ function MoviesCardList({ movies, searchText, onClick, savedMovies, loader }) {
   const [widhWindow, setWidhWindow] = useState(window.innerWidth);
 
   const displayElements = () => {
-    if (window.innerWidth > 1023) {
+    if (window.innerWidth > 1279) {
       setShownMovies((prev) => prev + 4);
-    } else if (window.innerWidth >= 320 && window.innerWidth <= 1023) {
+    } else if (window.innerWidth >= 990 && window.innerWidth <= 1279) {
+      setShownMovies((prev) => prev + 3);
+    } else if (window.innerWidth >= 320 && window.innerWidth <= 989) {
       setShownMovies((prev) => prev + 2);
     }
   };
 
   useEffect(() => {
-    if (widhWindow > 1023) {
+    if (widhWindow > 1279) {
       setShownMovies(16);
-    } else if (widhWindow <= 1023 && widhWindow > 750) {
+    } else if (widhWindow <= 1279 && widhWindow >= 990) {
+      setShownMovies(15);
+    } else if (widhWindow <= 989 && widhWindow >= 767) {
       setShownMovies(8);
-    } else if (widhWindow >= 320 && widhWindow <= 1023) {
+    } else if (widhWindow <= 766 && widhWindow >= 320) {
       setShownMovies(5);
     }
   }, [widhWindow]);

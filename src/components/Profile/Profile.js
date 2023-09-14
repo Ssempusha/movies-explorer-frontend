@@ -2,52 +2,47 @@ import React, { useState } from "react";
 import "./Profile.css";
 import Header from "../Header/Header";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
-import useForm from "../../hooks/useFormValidation"
 
-function Profile({ loggedIn, onSignOut, onUpdateUser, renderLoading, submitStatus, success }) {
-  // const { errors, isValid, checkValid } = useForm()
+function Profile({
+  loggedIn,
+  onSignOut,
+  onUpdateUser,
+  renderLoading,
+  submitStatus,
+  success,
+}) {
   const emailRegex = /^([a-z0-9_.-]+)@([a-z0-9_.-]+)\.([a-z.]{2,6})$/;
   const currentUser = React.useContext(CurrentUserContext);
   const [isEdit, setEdit] = useState(false);
-
   const [isSave, setSave] = useState(false);
-  /*   const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState(""); */
-
   const [isValid, setIsValid] = useState();
   const [errors, setErrors] = useState({});
 
   function checkValid(name, value) {
-    if (name === 'email') {
-      if(emailRegex.test(value)) {
-        setIsValid(true)
-        setErrors({...errors, email: ''})
-      } else if (value === '') {
-          setIsValid(false)
-        setErrors({...errors, email: 'Введите e-mail'})
+    if (name === "email") {
+      if (emailRegex.test(value)) {
+        setIsValid(true);
+        setErrors({ ...errors, email: "" });
+      } else if (value === "") {
+        setIsValid(false);
+        setErrors({ ...errors, email: "Введите e-mail" });
       } else {
-          setIsValid(false)
-          setErrors({...errors, email: 'Некорректный e-mail'})
-        }
-    } else if (name === 'name') {
-      if(value.length >= 2 && value.length <= 30) {
-          setIsValid(true)
-        setErrors({...errors, name: ''})
-      } else if (value === '') {
-          setIsValid(false)
-          setErrors({...errors, name: 'Введите имя'})
+        setIsValid(false);
+        setErrors({ ...errors, email: "Некорректный e-mail" });
       }
-      else {
-          setIsValid(false)
-        setErrors({...errors, name: 'Длина имени от 2 до 30 символов'})
+    } else if (name === "name") {
+      if (value.length >= 2 && value.length <= 30) {
+        setIsValid(true);
+        setErrors({ ...errors, name: "" });
+      } else if (value === "") {
+        setIsValid(false);
+        setErrors({ ...errors, name: "Введите имя" });
+      } else {
+        setIsValid(false);
+        setErrors({ ...errors, name: "Длина имени от 2 до 30 символов" });
       }
-    } 
+    }
   }
-
-
-
-
-
 
   const [user, setUser] = React.useState({
     name: currentUser.name,
@@ -55,39 +50,21 @@ function Profile({ loggedIn, onSignOut, onUpdateUser, renderLoading, submitStatu
   });
 
   function handleChange(e) {
-    const { target: { name, value } } = e;
+    const {
+      target: { name, value },
+    } = e;
     setUser({ ...user, [name]: value });
     checkValid(name, value);
   }
-  // console.log(currentUser.name);
 
   function handleSubmit(e) {
-    //Запрещаем браузеру переходить по адресу формы
     e.preventDefault();
-    //Передаём значения управляемых компонентов во внешний обработчик
     onUpdateUser(user);
+    setSave(true);
+    setEdit(false);
   }
 
-  // const disabled = isValid ? !(isValid === (currentUser.name !== user.name || currentUser.email === user.email)) : true;
-  /*   function handleChangeName(e) {
-    setUser(e.target.name);
-  }
 
-  function handleChangeEmail(e) {
-    setUser(e.target.email);
-  } */
-/*   const handleChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
-  }; */
-
-  //После загрузки текущего пользователя из API
-  //его данные будут использованы в управляемых компонентах.
-/*   React.useEffect(() => {
-    setUser({
-      name: currentUser.name,
-      email: currentUser.email,
-    });
-  }, [currentUser]); */
   return (
     <>
       <Header loggedIn={loggedIn} />
@@ -134,8 +111,27 @@ function Profile({ loggedIn, onSignOut, onUpdateUser, renderLoading, submitStatu
               <span className="profile__error">{errors.email}</span>
               {isEdit && (
                 <div className="profile__button-container">
-                {isSave && (<span className={`${success ? "profile__submit-success" : "profile__submit-error"}`}>{submitStatus}</span>)}
-                  <button type="submit" className="profile__button-save"/* {changeData ? "profile__button-save" : "profile__button-save-test"} */ disabled={(!isValid) || (currentUser.name === user.name && currentUser.email === user.email)} onClick={() => setSave(true)} >
+                  {isSave && (
+                    <span
+                      className={`${
+                        success
+                          ? "profile__submit-success"
+                          : "profile__submit-error"
+                      }`}
+                    >
+                      {submitStatus}
+                    </span>
+                  )}
+                  <button
+                    type="submit"
+                    className="profile__button-save"
+                    disabled={
+                      !isValid ||
+                      (currentUser.name === user.name &&
+                        currentUser.email === user.email)
+                    }
+                    onClick={() => setSave(true)}
+                  >
                     {renderLoading}
                   </button>
                 </div>
