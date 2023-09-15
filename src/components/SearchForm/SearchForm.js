@@ -47,12 +47,10 @@ function SearchForm({ onSubmit, isShortMovie, onChange }) {
                 value={values.searchFilm || ""}
                 onChange={handleChange}
               />
-            </div>
-            <div className="search-form__button-container">
               <button type="submit" className="search-form__button"></button>
             </div>
+            <FilterCheckbox onChange={onChange} value={isShortMovie} />
           </form>
-          <FilterCheckbox onChange={onChange} value={isShortMovie} />
         </div>
       </div>
     </section>
