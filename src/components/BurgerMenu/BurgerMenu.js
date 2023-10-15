@@ -14,7 +14,7 @@ function BurgerMenu({ handleClose }) {
         ></button>
         <nav className="burger-menu__nav">
           <NavLink
-            exact
+            exact="true"
             to="/"
             className={({ isActive }) =>
               isActive ? "burger-menu__link-active" : "burger-menu__link"
